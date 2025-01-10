@@ -36,15 +36,7 @@ jobs:
         uses: docker/setup-qemu-action@v3
         with:
           platforms: arm64
-
-      # See "GPG Signing" below
-      - name: Setup GPG
-        id: gpg
-        uses: crazy-max/ghaction-import-gpg@v6
-        with:
-          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
-          passphrase: ${{ secrets.GPG_PASSPHRASE }}
-
+          
       - name: Build
         uses: andyholmes/flatter@main
         with:
